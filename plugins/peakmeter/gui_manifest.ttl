@@ -1,0 +1,35 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix guiext: <http://lv2plug.in/ns/extensions/ui#>.
+@prefix plug: <http://ll-plugins.nongnu.org/lv2/dev/peakmeter/0/>.
+@prefix plug2: <http://ll-plugins.nongnu.org/lv2/dev/peakmeter-stereo/0/>.
+
+<http://ll-plugins.nongnu.org/lv2/peakmeter#0>
+  rdfs:seeAlso <>;
+  guiext:ui plug:gui.
+
+<http://ll-plugins.nongnu.org/lv2/peakmeter-stereo#0>
+  rdfs:seeAlso <>;
+  guiext:ui plug2:gui.
+
+plug:gui
+  a guiext:GtkUI;
+  guiext:requiredFeature guiext:makeResident;
+  guiext:binary <peakmeter_gtk.so>;
+  guiext:portNotification [ 
+    guiext:plugin <http://ll-plugins.nongnu.org/lv2/peakmeter#0>;
+    guiext:portIndex 1 
+  ].
+
+plug2:gui
+  a guiext:GtkUI;
+  guiext:requiredFeature guiext:makeResident;
+  guiext:binary <peakmeter_gtk.so>;
+  guiext:portNotification 
+    [ guiext:plugin <http://ll-plugins.nongnu.org/lv2/peakmeter-stereo#0>;
+      guiext:portIndex 1 ],
+    [ guiext:plugin <http://ll-plugins.nongnu.org/lv2/peakmeter-stereo#0>;
+      guiext:portIndex 3 ].
+
+
+

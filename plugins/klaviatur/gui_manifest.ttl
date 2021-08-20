@@ -1,0 +1,13 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix guiext: <http://lv2plug.in/ns/extensions/ui#>.
+
+<http://ll-plugins.nongnu.org/lv2/klaviatur#0>
+  rdfs:seeAlso <>;
+  guiext:ui <http://ll-plugins.nongnu.org/lv2/klaviatur#0/gui>.
+
+<http://ll-plugins.nongnu.org/lv2/klaviatur#0/gui> 
+  a guiext:GtkUI;
+  guiext:requiredFeature guiext:Events;
+  guiext:requiredFeature guiext:makeResident;
+  guiext:binary <klaviatur_gtk.so>;
+  guiext:optionalFeature guiext:noUserResize.

@@ -1,0 +1,20 @@
+Version 0.2.x (ONGOING):
+	* Added -ldl to Elven linker flags (reported by Dave Robillard)
+	* Fixed the default MIDI CC mapping in Sineshaper
+	* Fixed GUI updates on MIDI CC changes in Elven
+	* Removed LASH support in Elven
+	* Updated all email addresses
+
+Version 0.2.8 (2010-02-12):
+	* Fixed build system bug that added $(LDFLAGS) to the static linker
+	  (reported by Philipp Überbacher)
+	* Bumped sndfile version requirement to 1.0.18, needed for FLAC
+	* Peak meters: Fixed URI bug (reported by Fraser)
+	* Rudolf 556: Print an error message when a sample fails to
+	  load (patch by Nedko Arnaudov)
+
+Version 0.2.1 (2008-07-02):
+	* Fixed version number in Makefile (reported by Chris Cannam)
+
+Version 0.2.0 (2008-05-21):
+	* First release

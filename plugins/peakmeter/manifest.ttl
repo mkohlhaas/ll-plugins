@@ -1,0 +1,12 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+
+<http://ll-plugins.nongnu.org/lv2/peakmeter#0>
+  a lv2:Plugin, lv2:AnalyserPlugin;
+  rdfs:seeAlso <peakmeter.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/peakmeter-stereo#0>
+  a lv2:Plugin, lv2:AnalyserPlugin;
+  rdfs:seeAlso <peakmeter.ttl>.
+

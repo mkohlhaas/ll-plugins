@@ -1,0 +1,77 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+@prefix ll: <http://ll-plugins.nongnu.org/lv2/namespace#>.
+
+ll:MathConstantPlugin a rdfs:Class ;
+    rdfs:subClassOf lv2:UtilityPlugin ;
+    rdfs:label "Math constants" ;
+    rdfs:comment """
+Mathematical constants from the standard C library
+""" .
+
+<http://ll-plugins.nongnu.org/lv2/math-constant-e#0>
+  a lv2:Plugin, ll:MathConstantPlugin;
+  lv2:binary <math-constants.so>;
+  rdfs:seeAlso <math-constants.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-constant-log2e#0>
+  a lv2:Plugin, ll:MathConstantPlugin;
+  lv2:binary <math-constants.so>;
+  rdfs:seeAlso <math-constants.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-constant-log10e#0>
+  a lv2:Plugin, ll:MathConstantPlugin;
+  lv2:binary <math-constants.so>;
+  rdfs:seeAlso <math-constants.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-constant-ln2#0>
+  a lv2:Plugin, ll:MathConstantPlugin;
+  lv2:binary <math-constants.so>;
+  rdfs:seeAlso <math-constants.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-constant-ln10#0>
+  a lv2:Plugin, ll:MathConstantPlugin;
+  lv2:binary <math-constants.so>;
+  rdfs:seeAlso <math-constants.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-constant-pi#0>
+  a lv2:Plugin, ll:MathConstantPlugin;
+  lv2:binary <math-constants.so>;
+  rdfs:seeAlso <math-constants.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-constant-pi_2#0>
+  a lv2:Plugin, ll:MathConstantPlugin;
+  lv2:binary <math-constants.so>;
+  rdfs:seeAlso <math-constants.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-constant-pi_4#0>
+  a lv2:Plugin, ll:MathConstantPlugin;
+  lv2:binary <math-constants.so>;
+  rdfs:seeAlso <math-constants.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-constant-1_pi#0>
+  a lv2:Plugin, ll:MathConstantPlugin;
+  lv2:binary <math-constants.so>;
+  rdfs:seeAlso <math-constants.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-constant-2_pi#0>
+  a lv2:Plugin, ll:MathConstantPlugin;
+  lv2:binary <math-constants.so>;
+  rdfs:seeAlso <math-constants.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-constant-2_sqrtpi#0>
+  a lv2:Plugin, ll:MathConstantPlugin;
+  lv2:binary <math-constants.so>;
+  rdfs:seeAlso <math-constants.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-constant-sqrt2#0>
+  a lv2:Plugin, ll:MathConstantPlugin;
+  lv2:binary <math-constants.so>;
+  rdfs:seeAlso <math-constants.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-constant-sqrt1_2#0>
+  a lv2:Plugin, ll:MathConstantPlugin;
+  lv2:binary <math-constants.so>;
+  rdfs:seeAlso <math-constants.ttl>.
+

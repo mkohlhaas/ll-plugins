@@ -1,0 +1,39 @@
+#ifndef plugins_control_midi_control_midi_peg
+#define plugins_control_midi_control_midi_peg
+
+
+#ifndef PEG_STRUCT
+#define PEG_STRUCT
+typedef struct {
+  float min;
+  float max;
+  float default_value;
+  char toggled;
+  char integer;
+  char logarithmic;
+} peg_data_t;
+#endif
+
+/* <http://ll-plugins.nongnu.org/lv2/control2midi#0> */
+
+static const char c_uri[] = "http://ll-plugins.nongnu.org/lv2/control2midi#0";
+
+enum c_port_enum {
+  c_input,
+  c_min,
+  c_max,
+  c_cc,
+  c_output,
+  c_n_ports
+};
+
+static const peg_data_t c_ports[] = {
+  { -3.40282e+38, 3.40282e+38, 0, 0, 0, 0 }, 
+  { -3.40282e+38, 3.40282e+38, 0, 0, 0, 0 }, 
+  { -3.40282e+38, 3.40282e+38, 1, 0, 0, 0 }, 
+  { -3.40282e+38, 3.40282e+38, 0, 0, 0, 0 }, 
+  { -3.40282e+38, 3.40282e+38, -3.40282e+38, 0, 0, 0 }, 
+};
+
+
+#endif /* plugins_control_midi_control_midi_peg */

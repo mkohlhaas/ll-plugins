@@ -1,0 +1,92 @@
+ll-plugins is a small collection of LV2 plugins and a host that runs them.
+
+In order to build ll-plugins you need to have the following packages installed:
+
+	cairomm       >= 1.2.4
+	gtkmm         >= 2.8.8
+	libjack       >= 0.109.0
+	lv2-c++-tools >= 1.0.0
+	libsndfile    >= 1.0.18
+	libsamplerate >= 0.1.2
+
+You can download the latest released version of ll-plugins from
+
+  http://ll-plugins.nongnu.org
+
+You can also get the latest development code from the Git repository using
+this command:
+
+  git clone git://git.sv.gnu.org/ll-plugins.git
+
+Beware that the development code may not work or even compile.
+
+
+THE PLUGINS
+===========
+All plugins are installed in separate LV2 bundles (except the ones that are
+closely related, like the math-constant plugins or the mono and stereo versions
+of the peak meter). The GUIs, for the plugins that have GUIs, are installed in
+bundles of their own to make it easier for packagers to put them in separate
+binary packages to avoid Gtk dependencies for the plugins themselves.
+
+The plugins are reasonably simple and could be used as examples or starting 
+points for hackers who want to write LV2 plugins based on the frameworks in
+the lv2-c++-tools package. There are synths, event processors, simple audio
+and control manipulators and GUI-based plugins.
+
+BASIC ARPEGGIATOR
+=================
+This plugin is just what it says. It takes MIDI event input and writes
+MIDI event output in the form of an arpeggio over the held keys in the input.
+You can control the speed of the arpeggio and the direction (up or down).
+
+CONTROL2MIDI
+============
+A plugin that converts a LV2 control port value to MIDI CC events. You can 
+set the CC number and the expected range of the input value.
+
+KLAVIATUR
+=========
+A MIDI keyboard. You can use it to send pitchbend events, CC events and of 
+course notes, using mouse or keyboard. Handy when you want to test a synth
+patch but don't have a real keyboard nearby. Klaviatur has a Gtk GUI that you
+use to control it.
+
+MATH-CONSTANTS
+==============
+A set of plugins that output constant control parameters for mathematical
+constants defined in the C header <math.h>.
+
+MATH-FUNCTIONS
+==============
+A set of plugins wrapping most of the functions in the C header <math.h>
+(sin(), cos(), exp(), modf() etc). All are available as both audio rate
+and control rate functions.
+
+PEAK METER
+==========
+A decaying peak meter that shows the peak level of the input signal.
+There is a mono and a stereo version. Both have Gtk GUIs.
+
+RUDOLF 556
+==========
+A simple drum machine with six separate drum voices - two bass drums, two
+snares and two hihats. The different voices are mapped to C, D, E, F, G and A
+in all octaves, and every voice has three control parameters (length, 
+hardness and volume). This plugin has a Gtk GUI that you can use to control the
+parameters.
+
+SINESHAPER
+==========
+An LV2 version of the Sineshaper synth - two sine oscillators fed through
+two sine waveshapers in series, with a bunch of parameters to control them.
+This plugin has a Gtk GUI too.
+
+THE HOST
+========
+The host that comes with this package is called Elven (Experimental LV2 
+Execution ENvironment). It is pretty slow and I don't really recommend it.
+If you can use another host, do that.
+
+
+Send bug reports and suggestions to Lars Luthman <mail@larsluthman.net>

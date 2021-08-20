@@ -1,0 +1,51 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#>.
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+@prefix ev: <http://lv2plug.in/ns/ext/event#>.
+
+<http://ll-plugins.nongnu.org/lv2/arpeggiator#0>
+  a lv2:Plugin;
+  lv2:binary <arpeggiator.so>;
+  doap:name "Basic arpeggiator";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+
+  lv2:port [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 0;
+    lv2:symbol "notes_per_minute";
+    lv2:name "Notes / minute";
+    lv2:minimum 30;
+    lv2:maximum 1200;
+    lv2:default 480;
+  ],
+  
+  [
+    a lv2:InputPort, lv2:ControlPort;
+    lv2:index 1;
+    lv2:symbol "direction";
+    lv2:name "Direction";
+    lv2:minimum 0;
+    lv2:maximum 1;
+    lv2:portProperty lv2:integer;
+    lv2:default 1;
+    lv2:scalePoint [ rdfs:label "Down"; rdf:value 0; ];
+    lv2:scalePoint [ rdfs:label "Up"; rdf:value 1; ];
+  ],
+
+  [
+    a lv2:InputPort, ev:EventPort;
+    lv2:index 2;
+    ev:supportsEvent <http://lv2plug.in/ns/ext/midi#MidiEvent>;
+    lv2:symbol "input";
+    lv2:name "MIDI input";
+  ],
+
+  [
+    a lv2:OutputPort, ev:EventPort;
+    ev:supportsEvent <http://lv2plug.in/ns/ext/midi#MidiEvent>;
+    lv2:index 3;
+    lv2:symbol "output";
+    lv2:name "MIDI output";
+  ].
+

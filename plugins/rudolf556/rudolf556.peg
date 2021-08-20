@@ -1,0 +1,69 @@
+#ifndef plugins_rudolf____rudolf____peg
+#define plugins_rudolf____rudolf____peg
+
+
+#ifndef PEG_STRUCT
+#define PEG_STRUCT
+typedef struct {
+  float min;
+  float max;
+  float default_value;
+  char toggled;
+  char integer;
+  char logarithmic;
+} peg_data_t;
+#endif
+
+/* <http://ll-plugins.nongnu.org/lv2/rudolf556#0> */
+
+static const char r_uri[] = "http://ll-plugins.nongnu.org/lv2/rudolf556#0";
+
+enum r_port_enum {
+  r_midi_input,
+  r_bass1_l,
+  r_bass1_h,
+  r_bass1_v,
+  r_bass2_l,
+  r_bass2_h,
+  r_bass2_v,
+  r_snare1_l,
+  r_snare1_h,
+  r_snare1_v,
+  r_snare2_l,
+  r_snare2_h,
+  r_snare2_v,
+  r_hihat1_l,
+  r_hihat1_h,
+  r_hihat1_v,
+  r_hihat2_l,
+  r_hihat2_h,
+  r_hihat2_v,
+  r_output_mix,
+  r_n_ports
+};
+
+static const peg_data_t r_ports[] = {
+  { -3.40282e+38, 3.40282e+38, -3.40282e+38, 0, 0, 0 }, 
+  { 0, 1, 0.3, 0, 0, 0 }, 
+  { 0, 1, 0.5, 0, 0, 0 }, 
+  { 0, 1, 0.5, 0, 0, 0 }, 
+  { 0, 1, 1, 0, 0, 0 }, 
+  { 0, 1, 0.5, 0, 0, 0 }, 
+  { 0, 1, 0.5, 0, 0, 0 }, 
+  { 0, 1, 0.3, 0, 0, 0 }, 
+  { 0, 1, 0.5, 0, 0, 0 }, 
+  { 0, 1, 0.5, 0, 0, 0 }, 
+  { 0, 1, 1, 0, 0, 0 }, 
+  { 0, 1, 0.5, 0, 0, 0 }, 
+  { 0, 1, 0.5, 0, 0, 0 }, 
+  { 0, 1, 0.3, 0, 0, 0 }, 
+  { 0, 1, 0.5, 0, 0, 0 }, 
+  { 0, 1, 0.5, 0, 0, 0 }, 
+  { 0, 1, 1, 0, 0, 0 }, 
+  { 0, 1, 0.5, 0, 0, 0 }, 
+  { 0, 1, 0.5, 0, 0, 0 }, 
+  { -3.40282e+38, 3.40282e+38, -3.40282e+38, 0, 0, 0 }, 
+};
+
+
+#endif /* plugins_rudolf____rudolf____peg */

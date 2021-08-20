@@ -1,0 +1,89 @@
+#ifndef plugins_sineshaper_sineshaper_peg
+#define plugins_sineshaper_sineshaper_peg
+
+
+#ifndef PEG_STRUCT
+#define PEG_STRUCT
+typedef struct {
+  float min;
+  float max;
+  float default_value;
+  char toggled;
+  char integer;
+  char logarithmic;
+} peg_data_t;
+#endif
+
+/* <http://ll-plugins.nongnu.org/lv2/sineshaper#0> */
+
+static const char s_uri[] = "http://ll-plugins.nongnu.org/lv2/sineshaper#0";
+
+enum s_port_enum {
+  s_tun,
+  s_oct,
+  s_sub_tun,
+  s_sub_oct,
+  s_osc_mix,
+  s_prt_on,
+  s_prt_tim,
+  s_prt_tie,
+  s_vib_frq,
+  s_vib_dpt,
+  s_trm_frq,
+  s_trm_dpt,
+  s_shp_env,
+  s_shp_tot,
+  s_shp_spl,
+  s_shp_shf,
+  s_lfo_frq,
+  s_lfo_dpt,
+  s_att,
+  s_dec,
+  s_sus,
+  s_rel,
+  s_amp_env,
+  s_drive,
+  s_gain,
+  s_del_tim,
+  s_del_fb,
+  s_del_mix,
+  s_out,
+  s_midi,
+  s_n_ports
+};
+
+static const peg_data_t s_ports[] = {
+  { 0.5, 2, 1, 0, 0, 0 }, 
+  { -10, 10, 0, 0, 0, 0 }, 
+  { 0.5, 2, 0.94, 0, 0, 0 }, 
+  { -10, 10, -5, 0, 0, 0 }, 
+  { 0, 1, 0.13, 0, 0, 0 }, 
+  { -1, 1, 0, 0, 0, 0 }, 
+  { 0.001, 3, 0.06, 0, 0, 0 }, 
+  { -1, 1, 0, 0, 0, 0 }, 
+  { 0, 10, 0, 0, 0, 0 }, 
+  { 0, 0.25, 0, 0, 0, 0 }, 
+  { 0, 10, 0, 0, 0, 0 }, 
+  { 0, 1, 0, 0, 0, 0 }, 
+  { 0, 1, 1, 0, 0, 0 }, 
+  { 0, 6, 3.54331, 0, 0, 0 }, 
+  { 0, 1, 0.305, 0, 0, 0 }, 
+  { 0, 1, 0, 0, 0, 0 }, 
+  { 0, 10, 0, 0, 0, 0 }, 
+  { 0, 1, 0.005, 0, 0, 0 }, 
+  { 0.0005, 1, 0.0005, 0, 0, 0 }, 
+  { 0.0005, 1, 0.40035, 0, 0, 0 }, 
+  { 0, 1, 0.125, 0, 0, 0 }, 
+  { 0.0005, 3, 0.8465, 0, 0, 0 }, 
+  { 0, 1, 0, 0, 0, 0 }, 
+  { 0, 1, 0, 0, 0, 0 }, 
+  { 0, 2, 0.74, 0, 0, 0 }, 
+  { 0, 3, 0.3, 0, 0, 0 }, 
+  { 0, 1, 0.185, 0, 0, 0 }, 
+  { 0, 1, 0.345, 0, 0, 0 }, 
+  { -3.40282e+38, 3.40282e+38, -3.40282e+38, 0, 0, 0 }, 
+  { -3.40282e+38, 3.40282e+38, -3.40282e+38, 0, 0, 0 }, 
+};
+
+
+#endif /* plugins_sineshaper_sineshaper_peg */

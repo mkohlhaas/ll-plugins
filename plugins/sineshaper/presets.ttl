@@ -1,0 +1,78 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix pr: <http://ll-plugins.nongnu.org/lv2/presets#>.
+
+<http://ll-plugins.nongnu.org/lv2/sineshaper#0>
+  
+  pr:bank <http://ll-plugins.nongnu.org/lv2/sineshaper#0/banks/0>;
+  
+  pr:preset [
+    a pr:Preset;
+    rdfs:label "Default";
+    pr:midiProgram 0;
+    pr:inBank <http://ll-plugins.nongnu.org/lv2/sineshaper#0/banks/0>;
+    pr:portValues "0:1 1:0 2:0.94 3:-5 4:0.13 5:0 6:0.06 7:1 8:0 9:0 10:0 11:0 12:1 13:3.54331 14:0.305 15:0 16:0 17:0.005 18:0.0005 19:0.040035 20:0.125 21:0.84036 22:0 23:0 24:0.74 25:0.3 26:0.185 27:0.345";
+  ],
+
+  [
+    a pr:Preset;
+    rdfs:label "Tremolo pad";
+    pr:midiProgram 1;
+    pr:inBank <http://ll-plugins.nongnu.org/lv2/sineshaper#0/banks/0>;
+    pr:portValues "0:1 1:0 2:1.01 3:-1 4:0.435 5:0 6:0.44 7:1 8:2.8 9:0.005 10:5.4 11:0.49 12:1 13:4.43409 14:0.845 15:0 16:0.15 17:0.2 18:0.16042 19:0.344883 20:0.915 21:0.570405 22:0.59 23:0 24:0.51 25:0.38 26:0.275 27:0.1";
+  ],
+
+  [
+    a pr:Preset;
+    rdfs:label "Woodpecker";
+    pr:midiProgram 2;
+    pr:inBank <http://ll-plugins.nongnu.org/lv2/sineshaper#0/banks/0>;
+    pr:portValues "0:1 1:0 2:0.94 3:-5 4:0.645 5:0 6:0.06 7:0 8:0 9:0 10:0 11:0 12:1 13:3.54331 14:0.305 15:0 16:0 17:0.005 18:0.0005 19:0.0350375 20:0 21:0.030495 22:0 23:0 24:0.84 25:0.06 26:0.77 27:0.49";
+  ],
+
+  [
+    a pr:Preset;
+    rdfs:label "Bright";
+    pr:midiProgram 3;
+    pr:inBank <http://ll-plugins.nongnu.org/lv2/sineshaper#0/banks/0>;
+    pr:portValues "0:1 1:0 2:0.94 3:-5 4:0.175 5:0 6:0.06 7:1 8:7.3 9:0.0175 10:0 11:0 12:1 13:3.82677 14:0.245 15:0 16:0 17:0.005 18:0.0005 19:0.040035 20:0.56 21:0.84036 22:0 23:0 24:0.62 25:0.3 26:0.6 27:0.14";
+  ],
+
+  [
+    a pr:Preset;
+    rdfs:label "Soft";
+    pr:midiProgram 4;
+    pr:inBank <http://ll-plugins.nongnu.org/lv2/sineshaper#0/banks/0>;
+    pr:portValues "0:1 1:0 2:0.94 3:-1 4:0 5:1 6:0.205 7:1 8:10 9:0.015 10:7.5 11:0 12:1 13:1.37008 14:0.305 15:0 16:0 17:0.005 18:0.0754625 19:0.0005 20:1 21:0.345443 22:0 23:0 24:0.71 25:0.38 26:0.18 27:0.245";
+  ],
+
+  [
+    a pr:Preset;
+    rdfs:label "Clean";
+    pr:midiProgram 5;
+    pr:inBank <http://ll-plugins.nongnu.org/lv2/sineshaper#0/banks/0>;
+    pr:portValues "0:1 1:0 2:0.94 3:-5 4:0 5:0 6:0.06 7:0 8:7.3 9:0.02125 10:0 11:0 12:1 13:2.80677 14:0.245 15:0 16:0 17:0.005 18:0.00140278 19:0.040035 20:0.56 21:0.84036 22:0 23:0 24:0.6 25:0.3 26:0.6 27:0";
+  ],
+
+  [
+    a pr:Preset;
+    rdfs:label "Noisy";
+    pr:midiProgram 6;
+    pr:inBank <http://ll-plugins.nongnu.org/lv2/sineshaper#0/banks/0>;
+    pr:portValues "0:1 1:0 2:0.973448 3:-3 4:0.375 5:0 6:0.267714 7:1 8:8.75 9:0.02125 10:6.4 11:0.135 12:1 13:5.62677 14:0.245 15:0.32 16:0 17:0.005 18:0.0005 19:0.0140167 20:0.725 21:0.153825 22:0 23:0 24:0.51 25:0.3 26:0.6 27:0.14";
+  ],
+
+  [
+    a pr:Preset;
+    rdfs:label "Cosineshaper";
+    pr:midiProgram 7;
+    pr:inBank <http://ll-plugins.nongnu.org/lv2/sineshaper#0/banks/0>;
+    pr:portValues "0:1 1:-1 2:1.00127 3:-1 4:0.36 5:0 6:0.0108541 7:1 8:0 9:0 10:10 11:0.15 12:1 13:4.60677 14:0.245 15:1 16:0 17:0.005 18:0.0233565 19:1 20:0.25 21:0.0394266 22:0.68 23:0 24:0.5 25:0.362563 26:0.305 27:0.09";
+  ],
+
+  [
+    a pr:Preset;
+    rdfs:label "Nasty";
+    pr:midiProgram 8;
+    pr:inBank <http://ll-plugins.nongnu.org/lv2/sineshaper#0/banks/0>;
+    pr:portValues "0:1 1:-1 2:0.917822 3:-4 4:0 5:0 6:0.06 7:1 8:7.3 9:0.023622 10:0 11:0 12:1 13:4.72677 14:0.245 15:0 16:0.13 17:0.205 18:0.0005 19:0.040035 20:0.565 21:0.109559 22:0 23:0.55 24:0.5 25:0.325479 26:0.345 27:0.22";
+  ].

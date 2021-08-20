@@ -1,0 +1,13 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix guiext: <http://lv2plug.in/ns/extensions/ui#>.
+
+<http://ll-plugins.nongnu.org/lv2/sineshaper#0> 
+  rdfs:seeAlso <>;
+  guiext:ui <http://ll-plugins.nongnu.org/lv2/sineshaper#0/gui>.
+
+<http://ll-plugins.nongnu.org/lv2/sineshaper#0/gui> 
+  a guiext:GtkUI;
+  guiext:requiredFeature guiext:makeResident;
+  guiext:binary <sineshaper_gtk.so>;
+  guiext:optionalFeature guiext:ext_presets.

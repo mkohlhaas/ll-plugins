@@ -1,0 +1,427 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+
+
+# audio ports
+_:audioInputPort0
+    a lv2:AudioPort, lv2:InputPort;
+    lv2:index 0;
+    lv2:symbol "input";
+    lv2:name "Input".
+
+_:audioInputPortX
+    a lv2:AudioPort, lv2:InputPort;
+    lv2:index 0;
+    lv2:symbol "x";
+    lv2:name "x".
+
+_:audioInputPortY
+    a lv2:AudioPort, lv2:InputPort;
+    lv2:index 1;
+    lv2:symbol "y";
+    lv2:name "y".
+
+_:audioOutputPort1
+    a lv2:AudioPort, lv2:OutputPort;
+    lv2:index 1;
+    lv2:symbol "output";
+    lv2:name "Output".
+
+_:audioOutputPort2
+    a lv2:AudioPort, lv2:OutputPort;
+    lv2:index 2;
+    lv2:symbol "output";
+    lv2:name "Output".
+  
+
+# control ports
+_:controlInputPort0
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 0;
+    lv2:symbol "input";
+    lv2:name "Input".
+
+_:controlInputPortX
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 0;
+    lv2:symbol "x";
+    lv2:name "x".
+
+_:controlInputPortY
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 1;
+    lv2:symbol "y";
+    lv2:name "y".
+
+_:controlOutputPort1
+    a lv2:ControlPort, lv2:OutputPort;
+    lv2:index 1;
+    lv2:symbol "output";
+    lv2:name "Output".
+
+_:controlOutputPort2
+    a lv2:ControlPort, lv2:OutputPort;
+    lv2:index 2;
+    lv2:symbol "output";
+    lv2:name "Output".
+  
+
+<http://ll-plugins.nongnu.org/lv2/math-function-acos#0>
+  a lv2:Plugin;
+  doap:name "Function acos (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:binary <math-functions.so>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-acos-ctrl#0>
+  a lv2:Plugin;
+  doap:name "Function acos (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:binary <math-functions.so>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-asin#0>
+  a lv2:Plugin;
+  doap:name "Function asin (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:binary <math-functions.so>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-asin-ctrl#0>
+  a lv2:Plugin;
+  doap:name "Function asin (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:binary <math-functions.so>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-atan#0>
+  a lv2:Plugin;
+  doap:name "Function atan (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:binary <math-functions.so>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-atan-ctrl#0>
+  a lv2:Plugin;
+  doap:name "Function atan (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:binary <math-functions.so>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-atan2#0>
+  a lv2:Plugin;
+  doap:name "Function atan2(x,y) (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:binary <math-functions.so>;
+  lv2:port _:audioInputPortX;
+  lv2:port _:audioInputPortY;
+  lv2:port _:audioOutputPort2.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-atan2-ctrl#0>
+  a lv2:Plugin;
+  doap:name "Function atan2(x,y) (C)";
+  lv2:binary <math-functions.so>;
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPortX;
+  lv2:port _:controlInputPortY;
+  lv2:port _:controlOutputPort2.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-ceil#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function ceil (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-ceil-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function ceil (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-cos#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function cos (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-cos-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function cos (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-cosh#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function cosh (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-cosh-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function cosh (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-exp#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function exp (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-exp-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function exp (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-abs#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function abs (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-abs-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function abs (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-floor#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function floor (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-floor-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function floor (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-fmod#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function fmod(x,y) (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPortX;
+  lv2:port _:audioInputPortY;
+  lv2:port _:audioOutputPort2.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-fmod-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function fmod(x,y) (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPortX;
+  lv2:port _:controlInputPortY;
+  lv2:port _:controlOutputPort2.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-log#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function log (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-log-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function log (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-log10#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function log10 (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-log10-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function log10 (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-modf#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function modf (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port [
+    a lv2:AudioPort, lv2:InputPort;
+    lv2:index 0;
+    lv2:symbol "input";
+    lv2:name "Input";
+  ],
+  [
+    a lv2:AudioPort, lv2:OutputPort;
+    lv2:index 1;
+    lv2:symbol "integer";
+    lv2:name "Integer";
+  ],
+  [
+    a lv2:AudioPort, lv2:OutputPort;
+    lv2:index 2;
+    lv2:symbol "fraction";
+    lv2:name "Fraction";
+  ].
+
+<http://ll-plugins.nongnu.org/lv2/math-function-modf-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function modf (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 0;
+    lv2:symbol "input";
+    lv2:name "Input";
+  ],
+  [
+    a lv2:ControlPort, lv2:OutputPort;
+    lv2:index 1;
+    lv2:symbol "integer";
+    lv2:name "Integer";
+  ],
+  [
+    a lv2:ControlPort, lv2:OutputPort;
+    lv2:index 2;
+    lv2:symbol "fraction";
+    lv2:name "Fraction";
+  ].
+
+<http://ll-plugins.nongnu.org/lv2/math-function-pow#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function pow(x,y) (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPortX;
+  lv2:port _:audioInputPortY;
+  lv2:port _:audioOutputPort2.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-pow-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function pow(x,y) (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPortX;
+  lv2:port _:controlInputPortY;
+  lv2:port _:controlOutputPort2.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-sin#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function sin (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-sin-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function sin (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-sinh#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function sinh (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-sinh-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function sinh (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-sqrt#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function sqrt (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-sqrt-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function sqrt (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-tan#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function tan (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-tan-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function tan (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-tanh#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function tanh (A)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:audioInputPort0;
+  lv2:port _:audioOutputPort1.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-tanh-ctrl#0>
+  a lv2:Plugin;
+  lv2:binary <math-functions.so>;
+  doap:name "Function tanh (C)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:port _:controlInputPort0;
+  lv2:port _:controlOutputPort1.
+

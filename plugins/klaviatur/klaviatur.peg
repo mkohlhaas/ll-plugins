@@ -1,0 +1,33 @@
+#ifndef plugins_klaviatur_klaviatur_peg
+#define plugins_klaviatur_klaviatur_peg
+
+
+#ifndef PEG_STRUCT
+#define PEG_STRUCT
+typedef struct {
+  float min;
+  float max;
+  float default_value;
+  char toggled;
+  char integer;
+  char logarithmic;
+} peg_data_t;
+#endif
+
+/* <http://ll-plugins.nongnu.org/lv2/klaviatur#0> */
+
+static const char k_uri[] = "http://ll-plugins.nongnu.org/lv2/klaviatur#0";
+
+enum k_port_enum {
+  k_midi_input,
+  k_midi_output,
+  k_n_ports
+};
+
+static const peg_data_t k_ports[] = {
+  { -3.40282e+38, 3.40282e+38, -3.40282e+38, 0, 0, 0 }, 
+  { -3.40282e+38, 3.40282e+38, -3.40282e+38, 0, 0, 0 }, 
+};
+
+
+#endif /* plugins_klaviatur_klaviatur_peg */

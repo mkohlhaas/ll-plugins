@@ -1,0 +1,53 @@
+#ifndef plugins_peakmeter_peakmeter_peg
+#define plugins_peakmeter_peakmeter_peg
+
+
+#ifndef PEG_STRUCT
+#define PEG_STRUCT
+typedef struct {
+  float min;
+  float max;
+  float default_value;
+  char toggled;
+  char integer;
+  char logarithmic;
+} peg_data_t;
+#endif
+
+/* <http://ll-plugins.nongnu.org/lv2/peakmeter#0> */
+
+static const char v_uri[] = "http://ll-plugins.nongnu.org/lv2/peakmeter#0";
+
+enum v_port_enum {
+  v_input,
+  v_level,
+  v_n_ports
+};
+
+static const peg_data_t v_ports[] = {
+  { -3.40282e+38, 3.40282e+38, -3.40282e+38, 0, 0, 0 }, 
+  { -3.40282e+38, 3.40282e+38, -3.40282e+38, 0, 0, 0 }, 
+};
+
+
+/* <http://ll-plugins.nongnu.org/lv2/peakmeter-stereo#0> */
+
+static const char v2_uri[] = "http://ll-plugins.nongnu.org/lv2/peakmeter-stereo#0";
+
+enum v2_port_enum {
+  v2_input_l,
+  v2_level_l,
+  v2_input_r,
+  v2_level_r,
+  v2_n_ports
+};
+
+static const peg_data_t v2_ports[] = {
+  { -3.40282e+38, 3.40282e+38, -3.40282e+38, 0, 0, 0 }, 
+  { -3.40282e+38, 3.40282e+38, -3.40282e+38, 0, 0, 0 }, 
+  { -3.40282e+38, 3.40282e+38, -3.40282e+38, 0, 0, 0 }, 
+  { -3.40282e+38, 3.40282e+38, -3.40282e+38, 0, 0, 0 }, 
+};
+
+
+#endif /* plugins_peakmeter_peakmeter_peg */

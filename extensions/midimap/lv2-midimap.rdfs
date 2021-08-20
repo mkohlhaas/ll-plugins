@@ -1,0 +1,123 @@
+# RDF Schema file for the MIDI map LV2 extension
+#
+# This document describes the classes and properties that are defined by the
+# MIDI map extension to the LV2 specification.
+
+@prefix ll:   <http://ll-plugins.nongnu.org/lv2/namespace#> .
+@prefix lv2:  <http://lv2plug.in/ontology#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+# The host feature instance for this extension
+ll:midimap-ext
+  a lv2:HostFeature;
+  rdfs:comment """
+This extension allows the plugin writer to specify MIDI controllers that
+the host should map to control input ports. For example, a synth plugin that
+has a control input port with index 5 that controls the gain of the synth 
+could map this input port to MIDI CC 7 ("Channel Volume"). The host would 
+then filter out all CC events with controller number 7 that comes in to the
+default MIDI port (specified using the ll:defaultMidiPort property defined 
+below) and for each such event, set the value of control input port 5 to the
+value of the controller event (mapped to the range of the control port).
+
+If no default MIDI port is specified, the host should assume that the
+control rate input port with datatype ll:miditype with the lowest index is
+the default MIDI port. If there are no such ports, the plugin does not have
+a default MIDI port. The host may (optionally) still use the MIDI controller
+mappings, for example by creating a "virtual" MIDI port for the plugin 
+instance that does not correspond to an actual plugin port, but is only used 
+to receive controller events that can be mapped to control input ports.
+
+The mappings defined by this extensions should be viewed as default values. The
+host may change these mappings for a plugin instance at any time.
+
+This extension consists only of the specified RDF classes and properties, there
+is no code or data structures. When passing the LV2_Host_Feature struct for
+this extension to the instantiate() function for a plugin the 'data' member
+should be set to NULL.
+""".
+
+
+####################################################################
+# Classes                                                          #
+####################################################################
+
+ll:MidiController
+  a rdfs:Class;
+  rdfs:label "MIDI Controller";
+  rdfs:comment """
+This class represents a MIDI controller, either a CC number or a NRPN
+number. In order for it to be considered valid by a host it must have
+exactly one occurance of each of the following properties:
+  ll:controllerType (with object ll:CC or ll:NRPN)
+  ll:controllerNumber (with an integer literal as object, in the range 
+                       0-127 for ll:CC or 0-16383 for ll:NRPN)
+""".
+
+ll:MidiControllerType
+  a rdfs:Class;
+  rdfs:label "MIDI Controller Type";
+  rdfs:comment """
+This class represents a MIDI controller type. The only two valid instances
+of this class are ll:CC and ll:NRPN.
+""".
+
+
+####################################################################
+# Properties                                                       #
+####################################################################
+
+ll:defaultMidiPort
+  a rdf:Property;
+  rdfs:domain  lv2:Plugin;
+  rdfs:label   "Default MIDI port";
+  rdfs:comment """
+Used to define the default MIDI port for a plugin. The object should be an
+integer literal that is the port index for the port that should be the 
+default MIDI port. This port must be a control rate input port with the 
+datatype <http://ll-plugins.nongnu.org/lv2/namespace#miditype>.
+""".
+
+ll:defaultMidiController
+  a rdf:Property;
+  rdfs:domain  lv2:Port;
+  rdfs:range   ll:MidiController;
+  rdfs:label   "Default MIDI controller";
+  rdfs:comment """
+Associates control input port with MIDI controllers. The subject port must 
+be a control rate input port with the datatype lv2:float.
+""".
+
+ll:controllerType
+  a rdf:Property;
+  rdfs:domain  ll:MidiController;
+  rdfs:range   ll:MidiControllerType;
+  rdfs:label   "MIDI controller type";
+  rdfs:comment "The type of this controller. Either ll:CC or ll:NRPN.".
+
+ll:controllerNumber
+  a rdf:Property;
+  rdfs:domain  ll:MidiController;
+  rdfs:label   "MIDI controller number";
+  rdfs:comment """
+The number for this controller. Should be in the range 0-127 for ll:CC or
+0-16383 for ll:NRPN.
+""".
+
+
+####################################################################
+# Instances                                                        #
+####################################################################
+
+ll:CC 
+  a ll:controllerType;
+  rdfs:label "MIDI CC";
+  rdfs:comment "MIDI CC controller type".
+
+ll:NRPN 
+  a ll:controllerType;
+  rdfs:label "MIDI NRPN";
+  rdfs:comment "MIDI NRPN controller type".
+

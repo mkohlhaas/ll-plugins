@@ -1,0 +1,164 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+@prefix ll: <http://ll-plugins.nongnu.org/lv2/namespace#>.
+
+ll:MathFunctionPlugin a rdfs:Class ;
+    rdfs:subClassOf lv2:UtilityPlugin ;
+    rdfs:label "Math functions" ;
+    rdfs:comment """
+Mathematical functions from the standard C library
+""" .
+
+<http://ll-plugins.nongnu.org/lv2/math-function-acos#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-acos-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-asin#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-asin-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-atan#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-atan-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-atan2#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-atan2-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-ceil#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-ceil-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-cos#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-cos-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-cosh#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-cosh-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-exp#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-exp-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-abs#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-abs-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-floor#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-floor-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-fmod#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-fmod-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-log#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-log-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-log10#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-log10-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-modf#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-modf-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-pow#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-pow-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-sin#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-sin-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-sinh#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-sinh-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-sqrt#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-sqrt-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-tan#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+
+<http://ll-plugins.nongnu.org/lv2/math-function-tan-ctrl#0>
+  a lv2:Plugin, ll:MathFunctionPlugin;
+  rdfs:seeAlso <math-functions.ttl>.
+

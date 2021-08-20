@@ -1,0 +1,64 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+@prefix ll: <http://ll-plugins.nongnu.org/lv2/namespace#>.
+
+
+<http://ll-plugins.nongnu.org/lv2/peakmeter#0>
+  a lv2:Plugin;
+  doap:name "Peak meter";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:binary <peakmeter.so>;
+  ll:svgIcon <icon.svg>;
+  ll:pegName "v";
+  
+  lv2:port [
+    a lv2:AudioPort, lv2:InputPort;
+    lv2:index 0;
+    lv2:symbol "input";
+    lv2:name "Input";
+  ],
+  
+  [
+    a lv2:ControlPort, lv2:OutputPort;
+    lv2:index 1;
+    lv2:symbol "level";
+    lv2:name "Level";
+  ].
+
+
+<http://ll-plugins.nongnu.org/lv2/peakmeter-stereo#0>
+  a lv2:Plugin;
+  doap:name "Peak meter (Stereo)";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:binary <peakmeter.so>;
+  ll:svgIcon <icon.svg>;
+  ll:pegName "v2";
+  
+  lv2:port [
+    a lv2:AudioPort, lv2:InputPort;
+    lv2:index 0;
+    lv2:symbol "input_l";
+    lv2:name "Input L";
+  ],
+  
+  [
+    a lv2:ControlPort, lv2:OutputPort;
+    lv2:index 1;
+    lv2:symbol "level_l";
+    lv2:name "Level L";
+  ],
+
+  [
+    a lv2:AudioPort, lv2:InputPort;
+    lv2:index 2;
+    lv2:symbol "input_r";
+    lv2:name "Input R";
+  ],
+  
+  [
+    a lv2:ControlPort, lv2:OutputPort;
+    lv2:index 3;
+    lv2:symbol "level_r";
+    lv2:name "Level R";
+  ].

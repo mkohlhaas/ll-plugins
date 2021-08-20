@@ -1,0 +1,467 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+@prefix ll: <http://ll-plugins.nongnu.org/lv2/namespace#>.
+@prefix llext: <http://ll-plugins.nongnu.org/lv2/ext/>.
+@prefix mm: <http://ll-plugins.nongnu.org/lv2/ext/midimap#>.
+@prefix pg: <http://ll-plugins.nongnu.org/lv2/ext/portgroups#>.
+@prefix ev: <http://lv2plug.in/ns/ext/event#>.
+@prefix plug: <http://ll-plugins.nongnu.org/lv2/sineshaper#0>.
+@prefix pr: <http://ll-plugins.nongnu.org/lv2/presets#>.
+
+
+plug:tuning     rdfs:label "Tuning".
+plug:osc2       rdfs:label "Oscillator 2".
+plug:vibrato    rdfs:label "Vibrato".
+plug:portamento rdfs:label "Portamento".
+plug:tremolo    rdfs:label "Tremolo".
+plug:envelope   rdfs:label "Envelope".
+plug:shaper     rdfs:label "Shaper".
+plug:amp        rdfs:label "Amplifer".
+plug:delay      rdfs:label "Delay".
+
+
+<http://ll-plugins.nongnu.org/lv2/sineshaper#0>
+  a lv2:Plugin;
+  doap:name "Sineshaper";
+  doap:license <http://usefulinc.com/doap/licenses/gpl>;
+  lv2:binary <sineshaper.so>;
+  pr:presetFile <presets.ttl>;
+  ll:svgIcon <icon.svg>;
+  ll:pegName "s";
+  
+  lv2:port [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 0;
+    lv2:symbol "tun";
+    lv2:name "Tune";
+    lv2:minimum 0.5;
+    lv2:maximum 2;
+    lv2:default 1;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 16;
+    ];
+    pg:membership [ pg:group plug:tuning; ];
+  ],
+  
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 1;
+    lv2:symbol "oct";
+    lv2:name "Octave";
+    lv2:minimum -10;
+    lv2:maximum 10;
+    lv2:default 0;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 17;
+    ];
+    pg:membership [ pg:group plug:tuning; ];
+  ],
+  
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 2;
+    lv2:symbol "sub_tun";
+    lv2:name "Sub oscillator tune";
+    lv2:minimum 0.5;
+    lv2:maximum 2;
+    lv2:default 0.94;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 18;
+    ];
+    pg:membership [ pg:group plug:osc2; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 3;
+    lv2:symbol "sub_oct";
+    lv2:name "Sub oscillator octave";
+    lv2:minimum -10;
+    lv2:maximum 10;
+    lv2:default -5;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 19;
+    ];
+    pg:membership [ pg:group plug:osc2; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 4;
+    lv2:symbol "osc_mix";
+    lv2:name "Oscillator mix";
+    lv2:minimum 0;
+    lv2:maximum 1;
+    lv2:default 0.13;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 95;
+    ];
+    pg:membership [ pg:group plug:osc2; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 5;
+    lv2:symbol "prt_on";
+    lv2:name "Portamento on";
+    lv2:minimum -1;
+    lv2:maximum 1;
+    lv2:default 0;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 65;
+    ];
+    pg:membership [ pg:group plug:portamento; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 6;
+    lv2:symbol "prt_tim";
+    lv2:name "Portamento time";
+    lv2:minimum 0.001;
+    lv2:maximum 3;
+    lv2:default 0.06;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 5;
+    ];
+    pg:membership [ pg:group plug:portamento; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 7;
+    lv2:symbol "prt_tie";
+    lv2:name "Tie overlapping notes";
+    lv2:minimum -1;
+    lv2:maximum 1;
+    lv2:default 0;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 68;
+    ];
+    pg:membership [ pg:group plug:portamento; ];
+  ],
+  
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 8;
+    lv2:symbol "vib_frq";
+    lv2:name "Vibrato frequency";
+    lv2:minimum 0;
+    lv2:maximum 10;
+    lv2:default 0;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 2;
+    ];
+    pg:membership [ pg:group plug:vibrato; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 9;
+    lv2:symbol "vib_dpt";
+    lv2:name "Vibrato depth";
+    lv2:minimum 0;
+    lv2:maximum 0.25;
+    lv2:default 0;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 1;
+    ];
+    pg:membership [ pg:group plug:vibrato; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 10;
+    lv2:symbol "trm_frq";
+    lv2:name "Tremolo frequency";
+    lv2:minimum 0;
+    lv2:maximum 10;
+    lv2:default 0;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 75;
+    ];
+    pg:membership [ pg:group plug:tremolo; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 11;
+    lv2:symbol "trm_dpt";
+    lv2:name "Tremolo depth";
+    lv2:minimum 0;
+    lv2:maximum 1;
+    lv2:default 0;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 92;
+    ];
+    pg:membership [ pg:group plug:tremolo; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 12;
+    lv2:symbol "shp_env";
+    lv2:name "Shaper envelope sensitivity";
+    lv2:minimum 0;
+    lv2:maximum 1;
+    lv2:default 1;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 71;
+    ];
+    pg:membership [ pg:group plug:shaper; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 13;
+    lv2:symbol "shp_tot";
+    lv2:name "Shape amount";
+    lv2:minimum 0;
+    lv2:maximum 6;
+    lv2:default 3.54331;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 74;
+    ];
+    pg:membership [ pg:group plug:shaper; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 14;
+    lv2:symbol "shp_spl";
+    lv2:name "Shape split";
+    lv2:minimum 0;
+    lv2:maximum 1;
+    lv2:default 0.305;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 70;
+    ];
+    pg:membership [ pg:group plug:shaper; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 15;
+    lv2:symbol "shp_shf";
+    lv2:name "Shape shift";
+    lv2:minimum 0;
+    lv2:maximum 1;
+    lv2:default 0;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 76;
+    ];
+    pg:membership [ pg:group plug:shaper; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 16;
+    lv2:symbol "lfo_frq";
+    lv2:name "Shaper LFO frequency";
+    lv2:minimum 0;
+    lv2:maximum 10;
+    lv2:default 0;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 77;
+    ];
+    pg:membership [ pg:group plug:shaper; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 17;
+    lv2:symbol "lfo_dpt";
+    lv2:name "Shaper LFO depth";
+    lv2:minimum 0;
+    lv2:maximum 1;
+    lv2:default 0.005;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 78;
+    ];
+    pg:membership [ pg:group plug:shaper; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 18;
+    lv2:symbol "att";
+    lv2:name "Attack";
+    lv2:minimum 0.0005;
+    lv2:maximum 1;
+    lv2:default 0.0005;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 73;
+    ];
+    pg:membership [ pg:group plug:envelope; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 19;
+    lv2:symbol "dec";
+    lv2:name "Decay";
+    lv2:minimum 0.0005;
+    lv2:maximum 1;
+    lv2:default 0.40035;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 4;
+    ];
+    pg:membership [ pg:group plug:envelope; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 20;
+    lv2:symbol "sus";
+    lv2:name "Sustain";
+    lv2:minimum 0;
+    lv2:maximum 1;
+    lv2:default 0.125;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 79;
+    ];
+    pg:membership [ pg:group plug:envelope; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 21;
+    lv2:symbol "rel";
+    lv2:name "Release";
+    lv2:minimum 0.0005;
+    lv2:maximum 3;
+    lv2:default 0.8465;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 72;
+    ];
+    pg:membership [ pg:group plug:release; ];
+  ],
+  
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 22;
+    lv2:symbol "amp_env";
+    lv2:name "Amp envelope sensitivity";
+    lv2:minimum 0;
+    lv2:maximum 1;
+    lv2:default 0;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 93;
+    ];
+    pg:membership [ pg:group plug:amplifier; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 23;
+    lv2:symbol "drive";
+    lv2:name "Drive";
+    lv2:minimum 0;
+    lv2:maximum 1;
+    lv2:default 0;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 94;
+    ];
+    pg:membership [ pg:group plug:amplifier; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 24;
+    lv2:symbol "gain";
+    lv2:name "Gain";
+    lv2:minimum 0;
+    lv2:maximum 2;
+    lv2:default 0.74;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 7;
+    ];
+    pg:membership [ pg:group plug:amplifier; ];
+  ],
+  
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 25;
+    lv2:symbol "del_tim";
+    lv2:name "Delay time";
+    lv2:minimum 0;
+    lv2:maximum 3;
+    lv2:default 0.3;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 12;
+    ];
+    pg:membership [ pg:group plug:delay; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 26;
+    lv2:symbol "del_fb";
+    lv2:name "Delay feedback";
+    lv2:minimum 0;
+    lv2:maximum 1;
+    lv2:default 0.185;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 13;
+    ];
+    pg:membership [ pg:group plug:delay; ];
+  ],
+
+  [
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 27;
+    lv2:symbol "del_mix";
+    lv2:name "Delay mix";
+    lv2:minimum 0;
+    lv2:maximum 1;
+    lv2:default 0.345;
+    mm:defaultMidiController [
+      mm:controllerType mm:CC;
+      mm:controllerNumber 91;
+    ];
+    pg:membership [ pg:group plug:delay; ];
+  ],
+  
+  [
+    a lv2:AudioPort, lv2:OutputPort;
+    lv2:index 28;
+    lv2:symbol "out";
+    lv2:name "Output";
+  ],
+
+  [
+    a ev:EventPort, lv2:InputPort;
+    lv2:index 29;
+    ev:supportsEvent <http://lv2plug.in/ns/ext/midi#MidiEvent>;
+    lv2:symbol "midi";
+    lv2:name "MIDI input";
+  ].
+
